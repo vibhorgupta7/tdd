@@ -4,12 +4,22 @@ import java.util.List;
 
 public class VowelCounter {
 
-    public Statement create(List<Ride> rides) {
+    private List<Ride> rides;
+
+    public VowelCounter(List<Ride> rides){
+        this.rides=rides;
+    }
+
+    public double getTotalFare() {
         double fare = 0;
         for(Ride ride : rides){
             fare += ride.getFare();
         }
-        return new Statement(fare, fare/rides.size(), rides.size());
+        return fare;
     }
+
+    public double getNumberOfRides() { return rides.size(); }
+
+    public double getAverageFarePerRide() { return getTotalFare()/getNumberOfRides(); }
 
 }

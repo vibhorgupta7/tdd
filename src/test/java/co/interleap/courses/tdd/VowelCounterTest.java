@@ -14,12 +14,11 @@ public class VowelCounterTest {
     // StatementGenerator
     @Test
     public void generateStatementForMultipleJourneysGivenTotalDistanceAndTime(){
-        VowelCounter statementGenerator = new VowelCounter();
         List<Ride> rides = Arrays.asList(new Ride(3,4), new Ride(5,1));
-        Statement statement =  statementGenerator.create(rides);
-        assertEquals(85, ((co.interleap.courses.tdd.Statement) statement).getTotalFare(), .01);
-        assertEquals(42.5, ((co.interleap.courses.tdd.Statement) statement).getAverageFairPerRide(), .01);
-        assertEquals(2, ((co.interleap.courses.tdd.Statement) statement).getNumberOfRides(), .01);
+        VowelCounter statement =  new VowelCounter(rides);
+        assertEquals(85, statement.getTotalFare(), .01);
+        assertEquals(42.5, statement.getAverageFarePerRide(), .01);
+        assertEquals(2, statement.getNumberOfRides(), .01);
 
     }
 
