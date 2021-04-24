@@ -17,7 +17,7 @@ public class Ride {
         return time;
     }
 
-    double getTotalFare(){
+    double getFare(){
         return distance * FARE_PER_KM + time * FARE_PER_MIN;
     }
 
